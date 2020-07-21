@@ -6,8 +6,7 @@ import './styles/app.css'
 
 // http://www.omdbapi.com/?apikey=f4de5974&
 
-const App = props => {
-  const { classes } = props;
+const App = () => {
   return (
     <Switch>
 

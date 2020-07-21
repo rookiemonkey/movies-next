@@ -11,6 +11,7 @@ const Home = props => {
 
     const handleOnSubmit = event => {
         event.preventDefault()
+        props.history.push(`/movie/${input}`)
         handleReset()
     }
 
