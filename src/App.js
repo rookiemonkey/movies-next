@@ -10,8 +10,19 @@ const App = props => {
   const { classes } = props;
   return (
     <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/movie/:search' component={SearchResults} />
+
+      <Route
+        exact path='/'
+        render={routerProps => {
+          return <Home {...routerProps} />
+        }} />
+
+      <Route
+        exact path='/movie/:search'
+        render={routerProps => {
+          return <SearchResults {...routerProps} />
+        }} />
+
     </Switch>
   );
 }

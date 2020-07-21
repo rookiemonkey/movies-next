@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './extras/nav';
 
-const SearchResults = () => {
+const SearchResults = props => {
     return (
         <article>
             <Nav />

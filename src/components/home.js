@@ -9,11 +9,22 @@ const Home = props => {
     const { classes } = props;
     const [input, handleInput, handleReset] = useForm('')
 
+    const handleOnSubmit = event => {
+        event.preventDefault()
+        handleReset()
+    }
+
     return (
         <article>
             <Nav />
 
-            <form className={classes.form} noValidate autoComplete="off">
+            <form
+                className={classes.form}
+                noValidate
+                autoComplete="off"
+                onSubmit={handleOnSubmit}
+            >
+
                 <TextField
                     id="outlined-basic"
                     label="Outlined"
@@ -21,6 +32,7 @@ const Home = props => {
                     value={input}
                     onChange={handleInput}
                 />
+
             </form>
 
         </article>
