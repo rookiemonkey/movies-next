@@ -23,6 +23,7 @@ const SearchResults = props => {
             <Nav />
             <h1>SearchResults</h1>
             <h5>{totalResults}</h5>
+            {movieCards}
         </article>
     )
 }
