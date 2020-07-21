@@ -1,13 +1,22 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import Nav from './extras/nav';
+import homeStyles from '../styles/style-home';
 
-const Home = () => {
+const Home = props => {
+    const { classes } = props;
+
     return (
         <article>
             <Nav />
-            <h1>HOME APGE</h1>
+
+            <form className={classes.input} noValidate autoComplete="off">
+                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+            </form>
+
         </article>
     )
 }
 
-export default Home;
+export default withStyles(homeStyles, { withTheme: true })(Home);
