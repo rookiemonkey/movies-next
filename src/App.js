@@ -4,8 +4,6 @@ import Home from './components/home';
 import SearchResults from './components/searchResults';
 import './styles/app.css'
 
-// http://www.omdbapi.com/?apikey=f4de5974&
-
 const App = () => {
   return (
     <Switch>
