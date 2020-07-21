@@ -11,7 +11,7 @@ const Home = props => {
         <article>
             <Nav />
 
-            <form className={classes.input} noValidate autoComplete="off">
+            <form className={classes.form} noValidate autoComplete="off">
                 <TextField id="outlined-basic" label="Outlined" variant="outlined" />
             </form>
 
