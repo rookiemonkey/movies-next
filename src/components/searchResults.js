@@ -21,8 +21,7 @@ const SearchResults = props => {
     return (
         <article>
             <Nav />
-            <h1>SearchResults</h1>
-            <h5>{totalResults}</h5>
+            <h1>Total Results: {totalResults}</h1>
             {movieCards}
         </article>
     )
