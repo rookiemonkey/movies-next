@@ -1,23 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useRouter } from 'next/router'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
+import Button from '@material-ui/core/Button';
+import navStyles from '../styles/style-nav';
 
 const Nav = () => {
-    const classes = useStyles();
+    const classes = navStyles();
+    const router = useRouter();
 
     return (
         <div className={classes.root}>
@@ -26,6 +17,10 @@ const Nav = () => {
                     <Typography variant="h6" className={classes.title}>
                         Movies DB
                     </Typography>
+                    <Button
+                        color="inherit"
+                        onClick={() => { router.push('/') }}
+                    >Search</Button>
                 </Toolbar>
             </AppBar>
         </div>

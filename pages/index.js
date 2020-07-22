@@ -12,7 +12,7 @@ const Home = () => {
 
     const handleOnSubmit = event => {
         event.preventDefault()
-        router.push(`/movie/${input}`)
+        router.push(`/movies/${input}`)
         handleReset()
     }
 
