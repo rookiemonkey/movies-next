@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './extras/nav';
-import MovieCard from './extras/movieCard'
-import setResults from '../helpers/setResults';
+import { useRouter } from 'next/router'
+import Nav from '../../components/nav';
+import MovieCard from '../../components/movieCard'
+import setResults from '../../utilities/setResults';
 
-const SearchResults = props => {
-    const searchTerm = props.match.params.search;
+const SearchResults = () => {
+    const router = useRouter();
+    const searchTerm = router.query.input;
     const [searchResults, setSearchResults] = useState([]);
     const [totalResults, setTotalResults] = useState(0);
 
@@ -14,8 +16,8 @@ const SearchResults = props => {
             .then(data => setResults(data, setSearchResults, setTotalResults))
     }, [searchTerm])
 
-    const movieCards = searchResults.map((m, i) => {
-        return <MovieCard {...m} key={i} />
+    const movieCards = searchResults.map((movie, i) => {
+        return <MovieCard {...movie} key={i} />
     })
 
     return (

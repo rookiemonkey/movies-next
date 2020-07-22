@@ -1,17 +1,18 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { useRouter } from 'next/router'
 import TextField from '@material-ui/core/TextField';
-import useForm from '../helpers/useForm';
-import Nav from './extras/nav';
+import useForm from '../utilities/useForm';
+import Nav from '../components/nav';
 import homeStyles from '../styles/style-home';
 
-const Home = props => {
-    const { classes } = props;
+const Home = () => {
+    const classes = homeStyles();
+    const router = useRouter()
     const [input, handleInput, handleReset] = useForm('')
 
     const handleOnSubmit = event => {
         event.preventDefault()
-        props.history.push(`/movie/${input}`)
+        router.push(`/movie/${input}`)
         handleReset()
     }
 
@@ -40,4 +41,4 @@ const Home = props => {
     )
 }
 
-export default withStyles(homeStyles, { withTheme: true })(Home);
+export default Home;
