@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
+import Link from 'next/link';
 import style from '../assets/styles/card.module.css';
 
 const MovieCard = memo(props => {
     const { movie } = props;
-    console.log(movie)
 
     return (
         <div className={style.movie_card} style={{
@@ -33,9 +33,14 @@ const MovieCard = memo(props => {
                     </h4>
                 </div>
 
-                <button className={`${style.btn} ${style.btn_outline} ${style.movie_card__button}`} type="button">
-                    More Info
-                </button>
+                <Link href={`/${movie.imdbID}/movie`}>
+                    <a>
+                        <button
+                            className={`${style.btn} ${style.btn_outline} ${style.movie_card__button}`}
+                            type="button"
+                        >More Info</button>
+                    </a>
+                </Link>
 
             </div>
         </div>
