@@ -26,7 +26,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   height: 100%;
   min-height: 300px;
   display: block;
@@ -49,18 +49,6 @@
     background-size: cover;
     height: 400px;
   }
-}
-
-.movie_card[data-movie="Blade Runner"] {
-  background-image: url(http://digitalspyuk.cdnds.net/15/47/1600x800/landscape-1447754794-harrison-ford-blade-runner.jpg);
-}
-
-.movie_card[data-movie="Back to the Future"] {
-  background-image: url("http://www.blastr.com/sites/blastr/files/back-to-the-future-part-ii-original.jpg");
-}
-
-.movie_card[data-movie="Akira"] {
-  background-image: url("https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/58d86b3db3db2b57ce8f2986/1490578241899/?format=2500w");
 }
 
 .movie_card__overlay {
@@ -101,6 +89,7 @@
 .movie_card__button {
   -webkit-transition: .4s;
   transition: .4s;
+  margin-top: 10px;
 }
 
 .movie_card__icon {
@@ -159,7 +148,7 @@
 }
 
 .movie_card__header {
-  margin-bottom: 2em;
+  margin: 2.5em 0px;
   font-family: "Montserrat", helvetica, arial, sans-serif;
   text-transform: uppercase;
   line-height: 1;
@@ -167,6 +156,7 @@
 }
 
 .movie_card__title {
+  font-size: larger;
   color: #ffffff;
   margin-bottom: .25em;
   opacity: .75;
@@ -181,14 +171,6 @@
   margin: 0;
   font-weight: 700;
   opacity: .5;
-}
-
-.movie_card__desc {
-  font-weight: 300;
-  opacity: .84;
-  margin-bottom: 2em;
-  color: #ffffff;
-  font-family: "Montserrat", helvetica, arial, sans-serif;
 }
 
 .btn {

@@ -11,18 +11,22 @@ const Home = memo(() => {
         (async function () {
             const year = new Date().getFullYear;
             const movie = 'Marvel'
-            const raw = await fetch(`http://www.omdbapi.com/?apikey=f4de5974&s=${movie}&y=${year}`)
+            const raw = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDBKEY}&s=${movie}&y=${year}`)
             const { Search } = await raw.json();
-            setMovies(Search); setIsLoading(false);
+            setMovies(Search); setIsLoading(true);
         })()
-    })
+    }, [])
 
     return (
         <main>
             <Navigation />
 
             <section>
-                <MovieCard />
+                {
+                    isLoading
+                        ? movies.map((movie, ind) => <MovieCard movie={movie} key={ind} />)
+                        : null
+                }
             </section>
         </main>
     )

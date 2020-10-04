@@ -2,9 +2,14 @@ import React, { memo } from 'react';
 import style from '../assets/styles/card.module.css';
 
 const MovieCard = memo(props => {
+    const { movie } = props;
+    console.log(movie)
 
     return (
-        <div className={style.movie_card} data-movie="Blade Runner">
+        <div className={style.movie_card} style={{
+            backgroundImage: `url(http://img.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDBKEY}&i=${movie.imdbID})`,
+            backgroundSize: 'cover'
+        }}>
             <div className={style.movie_card__overlay}></div>
             <div className={style.movie_card__share}>
                 <button className={`${style.movie_card__icon} ${style.button_custom}`} >
@@ -21,19 +26,15 @@ const MovieCard = memo(props => {
 
                 <div className={style.movie_card__header}>
                     <h1 className={style.movie_card__title}>
-                        Blade Runner
+                        {movie.Title}
                     </h1>
                     <h4 className={style.movie_card__info}>
-                        (1982) Sci-Fi, Thriller
+                        ({movie.Year}) {movie.Type}
                     </h4>
                 </div>
 
-                <p className={style.movie_card__desc}>
-                    A blade runner must pursue and try to terminate four replicants who stole a ship in space and have returned to Earth to find their creator.
-                </p>
-
                 <button className={`${style.btn} ${style.btn_outline} ${style.movie_card__button}`} type="button">
-                    Watch Trailer
+                    More Info
                 </button>
 
             </div>
