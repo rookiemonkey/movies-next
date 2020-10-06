@@ -40,9 +40,9 @@ const Footer = () => {
                                 </span>
 
                                 <nav className="footer__nav">
-                                    <a href="about.html">About Us</a>
-                                    <a href="contacts.html">Contacts</a>
-                                    <a href="privacy.html">Privacy Policy</a>
+                                    <a href="#">About Us</a>
+                                    <a href="#">Contacts</a>
+                                    <a href="#">Privacy Policy</a>
 
                                 </nav>
 
