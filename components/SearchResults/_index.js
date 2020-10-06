@@ -12,7 +12,7 @@ const SearchResults = props => {
         (async function () {
             setPage(1);
             setIsLoading(true);
-            const main = `http://www.omdbapi.com/?apikey=f4de5974`
+            const main = `https://www.omdbapi.com/?apikey=f4de5974`
             const url = `${main}&s=${queryString}&page=${1}`;
             const raw = await fetch(url);
             const parsed = await raw.json();
@@ -27,7 +27,7 @@ const SearchResults = props => {
         document.documentElement.scrollTop = 0;
 
         setIsLoading(true);
-        const main = `http://www.omdbapi.com/?apikey=f4de5974`
+        const main = `https://www.omdbapi.com/?apikey=f4de5974`
         const url = `${main}&s=${queryString}&page=${page + 1}`;
         const raw = await fetch(url);
         const parsed = await raw.json();
@@ -41,7 +41,7 @@ const SearchResults = props => {
         document.documentElement.scrollTop = 0;
 
         setIsLoading(true);
-        const main = `http://www.omdbapi.com/?apikey=f4de5974`
+        const main = `https://www.omdbapi.com/?apikey=f4de5974`
         const url = `${main}&s=${queryString}&page=${page - 1}`;
         const raw = await fetch(url);
         const parsed = await raw.json();

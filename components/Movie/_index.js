@@ -8,7 +8,7 @@ const ShowMovie = props => {
     useEffect(() => {
         (async function () {
             setIsLoading(true);
-            const main = `http://www.omdbapi.com/?apikey=f4de5974`
+            const main = `https://www.omdbapi.com/?apikey=f4de5974`
             const url = `${main}&i=${movieid}`;
             const raw = await fetch(url);
             const parsed = await raw.json();

@@ -12,7 +12,7 @@ const Showcase = () => {
         (async function () {
             setPage(1);
             setIsLoading(true);
-            const main = `http://www.omdbapi.com/?apikey=f4de5974`
+            const main = `https://www.omdbapi.com/?apikey=f4de5974`
             const url = `${main}&s=${movieType}&page=${1}`;
             const raw = await fetch(url);
             const { Search } = await raw.json();
@@ -27,7 +27,7 @@ const Showcase = () => {
         document.documentElement.scrollTop = 0;
 
         setIsLoading(true);
-        const main = `http://www.omdbapi.com/?apikey=f4de5974`
+        const main = `https://www.omdbapi.com/?apikey=f4de5974`
         const url = `${main}&s=${movieType}&page=${page + 1}`;
         const raw = await fetch(url);
         const { Search } = await raw.json();
@@ -41,7 +41,7 @@ const Showcase = () => {
         document.documentElement.scrollTop = 0;
 
         setIsLoading(true);
-        const main = `http://www.omdbapi.com/?apikey=f4de5974`
+        const main = `https://www.omdbapi.com/?apikey=f4de5974`
         const url = `${main}&s=${movieType}&page=${page - 1}`;
         const raw = await fetch(url);
         const { Search } = await raw.json();
