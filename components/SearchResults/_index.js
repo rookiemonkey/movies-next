@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 import Tabs from './Tabs';
 import Cards from './Cards';
 
-const Showcase = () => {
-    const [movieType, setMovieType] = useState('2020');
+const SearchResults = props => {
+    const { queryString } = props;
     const [isLoading, setIsLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [movies, setMovies] = useState([])
@@ -13,13 +13,13 @@ const Showcase = () => {
             setPage(1);
             setIsLoading(true);
             const main = `http://www.omdbapi.com/?apikey=f4de5974`
-            const url = `${main}&s=${movieType}&page=${1}`;
+            const url = `${main}&s=${queryString}&page=${1}`;
             const raw = await fetch(url);
-            const { Search } = await raw.json();
-            setMovies(Search)
+            const parsed = await raw.json();
+            setMovies(parsed.Search)
             setIsLoading(false);
         })()
-    }, [movieType])
+    }, [queryString])
 
     const handleNextPage = useCallback(async () => {
         setPage(parseInt(page) + 1)
@@ -28,10 +28,10 @@ const Showcase = () => {
 
         setIsLoading(true);
         const main = `http://www.omdbapi.com/?apikey=f4de5974`
-        const url = `${main}&s=${movieType}&page=${page + 1}`;
+        const url = `${main}&s=${queryString}&page=${page + 1}`;
         const raw = await fetch(url);
-        const { Search } = await raw.json();
-        setMovies(Search)
+        const parsed = await raw.json();
+        setMovies(parsed.Search)
         setIsLoading(false);
     }, [page])
 
@@ -42,19 +42,16 @@ const Showcase = () => {
 
         setIsLoading(true);
         const main = `http://www.omdbapi.com/?apikey=f4de5974`
-        const url = `${main}&s=${movieType}&page=${page - 1}`;
+        const url = `${main}&s=${queryString}&page=${page - 1}`;
         const raw = await fetch(url);
-        const { Search } = await raw.json();
-        setMovies(Search)
+        const parsed = await raw.json();
+        setMovies(parsed.Search)
         setIsLoading(false);
     }, [page])
 
     return (
         <section className="content">
-            <Tabs
-                movieType={movieType}
-                setMovieType={setMovieType}
-            />
+            <Tabs queryString={queryString} />
 
             <Cards
                 isLoading={isLoading}
@@ -67,4 +64,4 @@ const Showcase = () => {
     )
 }
 
-export default Showcase;
+export default SearchResults;

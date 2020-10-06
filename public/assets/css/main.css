@@ -898,6 +898,13 @@ ul {
   line-height: 100%;
   margin: 20px 0 5px;
 }
+.content__title__custom {
+  color: #fff;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 100%;
+  margin: 20px 0 5px;
+}
 .content__tabs {
   display: none;
 }
