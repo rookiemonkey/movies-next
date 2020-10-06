@@ -1360,6 +1360,13 @@ ul {
 }
 .section--details {
   margin-top: 70px;
+  background-image: url('../img/section/section.jpg') !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-origin: padding-box;
+  background-clip: border-box;
 }
 .section--border {
   border-top: 1px solid rgba(210,201,255,0.1);

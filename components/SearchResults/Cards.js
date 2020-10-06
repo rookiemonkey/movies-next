@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useCallback } from "react";
 
 const Cards = props => {
@@ -33,9 +34,11 @@ const Cards = props => {
 
                                             <div className="card__cover">
                                                 <img src={movie.Poster} alt={movie.Title} />
-                                                <a href="#" className="card__play">
-                                                    <i className="icon ion-ios-play"></i>
-                                                </a>
+                                                <Link href={`/movie/${movie.imdbID}/`}>
+                                                    <a className="card__play">
+                                                        <i className="icon ion-ios-play"></i>
+                                                    </a>
+                                                </Link>
                                                 <span className="card__rate card__rate--green">
                                                     {rate[numGetRandom()]}
                                                 </span>

@@ -32,7 +32,7 @@ const Footer = () => {
                             <div className="footer__content">
 
                                 <a href="#" className="footer__logo">
-                                    <img src="assets/img/logo.svg" alt="" />
+                                    <img src="/assets/img/logo.svg" alt="" />
                                 </a>
 
                                 <span className="footer__copyright">
