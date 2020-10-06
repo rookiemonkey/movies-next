@@ -903,6 +903,7 @@ ul {
 }
 .content__mobile-tabs {
   position: relative;
+  margin-top: 20px !important;
 }
 .content__mobile-tabs--profile {
   margin-bottom: -20px;
@@ -1494,9 +1495,11 @@ ul {
   -webkit-transition: 0.4s ease;
   -moz-transition: 0.4s ease;
   transition: 0.4s ease;
+  min-height: 278.733px !important;
 }
 .card__cover img {
   width: 100%;
+  min-height: 278.733px !important;
 }
 .card__cover:before {
   content: '';
@@ -1759,6 +1762,17 @@ ul {
 }
 .card--details .card__content {
   margin-top: 20px;
+}
+.custom_row {
+  min-height: 680px !important;
+}
+.custom_buttons {
+  float: right !important;
+  border: 1px solid rgb(255, 216, 14) !important;
+  padding: 8.5px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: #ffffff !important;
 }
 @media (min-width: 576px) {
   .card__meta {

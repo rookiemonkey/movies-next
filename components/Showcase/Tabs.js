@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 const Tabs = props => {
-    const { setMovieType } = props;
+    const { setMovieType, movieType } = props;
 
     const hancleClick = useCallback(event => {
         setMovieType(event.target.dataset.value)
@@ -61,7 +61,7 @@ const Tabs = props => {
                         <div className="content__mobile-tabs" id="content__mobile-tabs">
 
                             <div className="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <input type="button" value="New releases" />
+                                <input type="button" value={movieType} />
                                 <span></span>
                             </div>
 

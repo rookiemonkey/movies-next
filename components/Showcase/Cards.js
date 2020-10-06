@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 const Cards = props => {
-    const { movies, isLoading } = props;
+    const { movies, isLoading, page, handleNextPage, handlePreviousPage } = props;
 
     // api doesn't return a rate unless its a request for a specific movie
     const rate = [
@@ -19,7 +19,7 @@ const Cards = props => {
             <div className="tab-content">
 
                 <div className="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
-                    <div className="row">
+                    <div className="row custom_row">
 
                         {
                             isLoading
@@ -60,6 +60,18 @@ const Cards = props => {
 
                     </div>
                 </div>
+
+                <button className="custom_buttons" onClick={handleNextPage}>
+                    Next
+                </button>
+
+                {
+                    parseInt(page) !== 1
+                        ? <button className="custom_buttons" onClick={handlePreviousPage}>
+                            Previous
+                        </button>
+                        : null
+                }
 
             </div>
         </div>
