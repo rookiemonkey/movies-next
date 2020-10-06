@@ -1,4 +1,18 @@
-const Cards = () => {
+import { useCallback } from "react";
+
+const Cards = props => {
+    const { movies, isLoading } = props;
+
+    // api doesn't return a rate unless its a request for a specific movie
+    const rate = [
+        '3.0', '3.5', '4.0', '4.5', '5.0',
+        '5.5', '6.0', '6.5', '7.0', '7.5',
+        '8.0', '8.5', '9.0', '9.5', '10'
+    ]
+
+    const numGetRandom = useCallback(() => {
+        return Math.floor(Math.random() * ((rate.length - 1) + 1))
+    }, [])
 
     return (
         <div className="container">
@@ -7,34 +21,42 @@ const Cards = () => {
                 <div className="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
                     <div className="row">
 
-                        {/* CARD CONTAINER */}
-                        <div className="col-6 col-sm-4 col-md-3 col-xl-2">
-                            <div className="card">
+                        {
+                            isLoading
+                                ? null
+                                : movies.map((movie, ind) => (
+                                    <div
+                                        key={ind}
+                                        className="col-6 col-sm-4 col-md-3 col-xl-2"
+                                    >
+                                        <div className="card">
 
-                                <div className="card__cover">
-                                    <img src="assets/img/covers/cover.jpg" alt="" />
-                                    <a href="#" className="card__play">
-                                        <i className="icon ion-ios-play"></i>
-                                    </a>
-                                    <span className="card__rate card__rate--green">8.4</span>
-                                </div>
+                                            <div className="card__cover">
+                                                <img src={movie.Poster} alt={movie.Title} />
+                                                <a href="#" className="card__play">
+                                                    <i className="icon ion-ios-play"></i>
+                                                </a>
+                                                <span className="card__rate card__rate--green">
+                                                    {rate[numGetRandom()]}
+                                                </span>
+                                            </div>
 
-                                <div className="card__content">
-                                    <h3 className="card__title">
-                                        <a href="#">
-                                            I Dream in Another Language
-                                        </a>
-                                    </h3>
+                                            <div className="card__content">
+                                                <h3 className="card__title">
+                                                    <a href="#">
+                                                        {movie.Title}
+                                                    </a>
+                                                </h3>
 
-                                    <span className="card__category">
-                                        <a href="#">Action</a>
-                                        <a href="#">Triler</a>
-                                    </span>
-                                </div>
+                                                <span className="card__category">
+                                                    <a href="#">{movie.Type}</a>
+                                                </span>
+                                            </div>
 
-                            </div>
-                        </div>
-
+                                        </div>
+                                    </div>
+                                ))
+                        }
 
                     </div>
                 </div>

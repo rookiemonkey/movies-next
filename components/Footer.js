@@ -36,10 +36,7 @@ const Footer = () => {
                                 </a>
 
                                 <span className="footer__copyright">
-                                    © 2020 HotFlix<br /> Create by
-                                    <a href="https://themeforest.net/user/dmitryvolkov/portfolio" target="_blank">
-                                        Dmitry Volkov
-                                    </a>
+                                    © {new Date().getFullYear()} HotFlix<br />
                                 </span>
 
                                 <nav className="footer__nav">
